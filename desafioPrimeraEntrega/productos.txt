@@ -1,0 +1,26 @@
+[
+  {
+    "nombre": "Heladera",
+    "precio": 15000,
+    "imagen": "https://www.torca.com.ar/images/58554-1.jpg",
+    "descripcion": "Heladera nueva 2022",
+    "stock": 6,
+    "id": 1
+  },
+  {
+    "nombre": "Television",
+    "precio": 20000,
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_641751-MLA43947105294_102020-O.jpg",
+    "descripcion": "Television nuevo 2022",
+    "stock": 4,
+    "id": 2
+  },
+  {
+    "nombre": "Auto",
+    "precio": 30000,
+    "imagen": "https://www.chevrolet.com.ar/content/dam/chevrolet/mercosur/argentina/espanol/index/cars/cars-subcontent/06-images/cruze-rs.png?imwidth=960",
+    "descripcion": "Auto nuevo 2022",
+    "stock": 8,
+    "id": 3
+  }
+]
