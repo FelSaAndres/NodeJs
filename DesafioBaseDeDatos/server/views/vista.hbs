@@ -1,0 +1,13 @@
+<div class="contenedorCards">
+    {{#if hayProductos}}
+    {{#each productos}}
+        <div class="card">
+            <img src={{this.thumbnail}} alt={{this.title}}>
+            <h2>{{this.title}}</h2>
+            <p>${{this.price}}</p>
+        </div>
+    {{/each}}
+    {{else}}
+        <div><p>No hay productos ingresados</p></div>
+    {{/if}}
+</div>
