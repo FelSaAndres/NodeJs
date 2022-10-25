@@ -1,0 +1,224 @@
+Microsoft Windows [Versión 10.0.22621.674]
+(c) Microsoft Corporation. Todos los derechos reservados.
+
+C:\Users\felip>mongo
+MongoDB shell version v5.0.13
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("55d05118-e84c-42af-b2d6-53ef97823552") }
+MongoDB server version: 5.0.13
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2022-10-23T16:44:24.617-03:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs
+admin      0.000GB
+config     0.000GB
+ecommerce  0.000GB
+local      0.000GB
+> use ecommerce
+switched to db ecommerce
+> show collections
+mensajes
+productos
+> db.productos.find()
+{ "_id" : ObjectId("6357238fddd11ba90569c0d3"), "title" : "Heladera", "price" : "170", "thumbnail" : "Imagen de Heladera" }
+{ "_id" : ObjectId("635725b7ddd11ba90569c0d4"), "title" : "Smart TV", "price" : "240", "thumbnail" : "Imagen de TV" }
+{ "_id" : ObjectId("635725b7ddd11ba90569c0d5"), "title" : "Microondas", "price" : "315", "thumbnail" : "Imagen de Microondas" }
+{ "_id" : ObjectId("635725b7ddd11ba90569c0d6"), "title" : "Estufa", "price" : "493", "thumbnail" : "Imagen de Estufa" }
+{ "_id" : ObjectId("635725b7ddd11ba90569c0d7"), "title" : "Ventilador", "price" : "568", "thumbnail" : "Imagen de Ventilador" }
+{ "_id" : ObjectId("635725b7ddd11ba90569c0d8"), "title" : "Computadora", "price" : "636", "thumbnail" : "Imagen de Computadora" }
+{ "_id" : ObjectId("635725b7ddd11ba90569c0d9"), "title" : "Monitor", "price" : "783", "thumbnail" : "Imagen de Monitor" }
+{ "_id" : ObjectId("635727dabd801e52513c08a1"), "title" : "Lampara", "price" : "860", "thumbnail" : "Imagen de Lampara" }
+{ "_id" : ObjectId("635727dabd801e52513c08a2"), "title" : "PS5", "price" : "999", "thumbnail" : "Imagen de PS5" }
+{ "_id" : ObjectId("635727dabd801e52513c08a3"), "title" : "Parlante", "price" : "1057", "thumbnail" : "Imagen de Parlante" }
+> db.mensajes.find()
+{ "_id" : ObjectId("63572b4454393b43b196222e"), "email" : "jorge@gmail.com", "fecha" : "2023-03-27 12:53:26", "mensaje" : "asdasdasd" }
+{ "_id" : ObjectId("63572b4454393b43b196222f"), "email" : "matias@gmail.com", "fecha" : "2022-09-23 00:46:14", "mensaje" : "gfdsdfasdf" }
+{ "_id" : ObjectId("63572b4454393b43b1962230"), "email" : "maria@gmail.com", "fecha" : "2023-06-24 14:22:48", "mensaje" : "gasfasafdasd" }
+{ "_id" : ObjectId("63572b4454393b43b1962231"), "email" : "lucas@gmail.com", "fecha" : "2023-01-25 00:40:41", "mensaje" : "agfasfasds" }
+{ "_id" : ObjectId("63572b4454393b43b1962232"), "email" : "lucia@gmail.com", "fecha" : "2022-04-12 00:07:17", "mensaje" : "gfdfgsdf" }
+{ "_id" : ObjectId("63572b4454393b43b1962233"), "email" : "mario@gmail.com", "fecha" : "2023-03-24 00:00:58", "mensaje" : "kjdiofjasd" }
+{ "_id" : ObjectId("63572b4454393b43b1962234"), "email" : "mariana@gmail.com", "fecha" : "2021-11-10 13:31:07", "mensaje" : "gdffkpd" }
+{ "_id" : ObjectId("63572b4454393b43b1962235"), "email" : "facundo@gmail.com", "fecha" : "2023-10-16 11:26:47", "mensaje" : "aofdejlvd" }
+{ "_id" : ObjectId("63572b4454393b43b1962236"), "email" : "carolina@gmail.com", "fecha" : "2023-07-08 05:27:03", "mensaje" : "cdikmkd" }
+{ "_id" : ObjectId("63572b4454393b43b1962237"), "email" : "guadalupe@gmail.com", "fecha" : "2022-09-19 02:25:01", "mensaje" : "grokefsd" }
+
+> db.productos.insertOne({"title" : "Teclado", "price" : "1230", "thumbnail" : "Imagen de Teclado" })
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("63572cd416e54736e7609464")
+}
+> db.productos.find()
+
+{ "_id" : ObjectId("6357238fddd11ba90569c0d3"), "title" : "Heladera", "price" : "170", "thumbnail" : "Imagen de Heladera" }
+{ "_id" : ObjectId("635725b7ddd11ba90569c0d4"), "title" : "Smart TV", "price" : "240", "thumbnail" : "Imagen de TV" }
+{ "_id" : ObjectId("635725b7ddd11ba90569c0d5"), "title" : "Microondas", "price" : "315", "thumbnail" : "Imagen de Microondas" }
+{ "_id" : ObjectId("635725b7ddd11ba90569c0d6"), "title" : "Estufa", "price" : "493", "thumbnail" : "Imagen de Estufa" }
+{ "_id" : ObjectId("635725b7ddd11ba90569c0d7"), "title" : "Ventilador", "price" : "568", "thumbnail" : "Imagen de Ventilador" }
+{ "_id" : ObjectId("635725b7ddd11ba90569c0d8"), "title" : "Computadora", "price" : "636", "thumbnail" : "Imagen de Computadora" }
+{ "_id" : ObjectId("635725b7ddd11ba90569c0d9"), "title" : "Monitor", "price" : "783", "thumbnail" : "Imagen de Monitor" }
+{ "_id" : ObjectId("635727dabd801e52513c08a1"), "title" : "Lampara", "price" : "860", "thumbnail" : "Imagen de Lampara" }
+{ "_id" : ObjectId("635727dabd801e52513c08a2"), "title" : "PS5", "price" : "999", "thumbnail" : "Imagen de PS5" }
+{ "_id" : ObjectId("635727dabd801e52513c08a3"), "title" : "Parlante", "price" : "1057", "thumbnail" : "Imagen de Parlante" }
+{ "_id" : ObjectId("63572cd416e54736e7609464"), "title" : "Teclado", "price" : "1230", "thumbnail" : "Imagen de Teclado" }
+
+> db.productos.find({price: {$lt: 500}})
+
+{ "_id" : ObjectId("6357358616e54736e7609465"), "title" : "Heladera", "price" : 170, "thumbnail" : "Imagen de Heladera" }
+{ "_id" : ObjectId("635735fa16e54736e7609466"), "title" : "Smart TV", "price" : 240, "thumbnail" : "Imagen de TV" }
+{ "_id" : ObjectId("635735fa16e54736e7609467"), "title" : "Microondas", "price" : 315, "thumbnail" : "Imagen de Microondas" }
+{ "_id" : ObjectId("635735fa16e54736e7609468"), "title" : "Estufa", "price" : 493, "thumbnail" : "Imagen de Estufa" }
+
+> db.productos.find({$and:[{price: {$gt: 500}}, {price: {$lt: 800}}]})
+
+{ "_id" : ObjectId("635735fa16e54736e7609469"), "title" : "Ventilador", "price" : 568, "thumbnail" : "Imagen de Ventilador" }
+{ "_id" : ObjectId("635735fa16e54736e760946a"), "title" : "Computadora", "price" : 636, "thumbnail" : "Imagen de Computadora" }
+{ "_id" : ObjectId("635735fa16e54736e760946b"), "title" : "Monitor", "price" : 783, "thumbnail" : "Imagen de Monitor" }
+
+> db.productos.find({price: {$gt: 800}})
+
+{ "_id" : ObjectId("635735fa16e54736e760946c"), "title" : "Lampara", "price" : 860, "thumbnail" : "Imagen de Lampara" }
+{ "_id" : ObjectId("635735fa16e54736e760946d"), "title" : "PS5", "price" : 999, "thumbnail" : "Imagen de PS5" }
+{ "_id" : ObjectId("635735fa16e54736e760946e"), "title" : "Parlante", "price" : 1057, "thumbnail" : "Imagen de Parlante" }
+{ "_id" : ObjectId("635735fa16e54736e760946f"), "title" : "Teclado", "price" : 1230, "thumbnail" : "Imagen de Teclado" }
+
+> db.productos.updateMany({},{$set: {stock:100}})
+
+{ "acknowledged" : true, "matchedCount" : 11, "modifiedCount" : 10 }
+
+> db.productos.find()
+{ "_id" : ObjectId("6357358616e54736e7609465"), "title" : "Heladera", "price" : 170, "thumbnail" : "Imagen de Heladera", "stock" : 100 }
+{ "_id" : ObjectId("635735fa16e54736e7609466"), "title" : "Smart TV", "price" : 240, "thumbnail" : "Imagen de TV", "stock" : 100 }
+{ "_id" : ObjectId("635735fa16e54736e7609467"), "title" : "Microondas", "price" : 315, "thumbnail" : "Imagen de Microondas", "stock" : 100 }
+{ "_id" : ObjectId("635735fa16e54736e7609468"), "title" : "Estufa", "price" : 493, "thumbnail" : "Imagen de Estufa", "stock" : 100 }
+{ "_id" : ObjectId("635735fa16e54736e7609469"), "title" : "Ventilador", "price" : 568, "thumbnail" : "Imagen de Ventilador", "stock" : 100 }
+{ "_id" : ObjectId("635735fa16e54736e760946a"), "title" : "Computadora", "price" : 636, "thumbnail" : "Imagen de Computadora", "stock" : 100 }
+{ "_id" : ObjectId("635735fa16e54736e760946b"), "title" : "Monitor", "price" : 783, "thumbnail" : "Imagen de Monitor", "stock" : 100 }
+{ "_id" : ObjectId("635735fa16e54736e760946c"), "title" : "Lampara", "price" : 860, "thumbnail" : "Imagen de Lampara", "stock" : 100 }
+{ "_id" : ObjectId("635735fa16e54736e760946d"), "title" : "PS5", "price" : 999, "thumbnail" : "Imagen de PS5", "stock" : 100 }
+{ "_id" : ObjectId("635735fa16e54736e760946e"), "title" : "Parlante", "price" : 1057, "thumbnail" : "Imagen de Parlante", "stock" : 100 }
+{ "_id" : ObjectId("635735fa16e54736e760946f"), "title" : "Teclado", "price" : 1230, "thumbnail" : "Imagen de Teclado", "stock" : 100 }
+
+> db.productos.updateMany({price:{$gt: 700}}, {$set:{stock: 0}})
+
+{ "acknowledged" : true, "matchedCount" : 5, "modifiedCount" : 4 }
+
+> db.productos.find()
+{ "_id" : ObjectId("6357358616e54736e7609465"), "title" : "Heladera", "price" : 170, "thumbnail" : "Imagen de Heladera", "stock" : 100 }
+{ "_id" : ObjectId("635735fa16e54736e7609466"), "title" : "Smart TV", "price" : 240, "thumbnail" : "Imagen de TV", "stock" : 100 }
+{ "_id" : ObjectId("635735fa16e54736e7609467"), "title" : "Microondas", "price" : 315, "thumbnail" : "Imagen de Microondas", "stock" : 100 }
+{ "_id" : ObjectId("635735fa16e54736e7609468"), "title" : "Estufa", "price" : 493, "thumbnail" : "Imagen de Estufa", "stock" : 100 }
+{ "_id" : ObjectId("635735fa16e54736e7609469"), "title" : "Ventilador", "price" : 568, "thumbnail" : "Imagen de Ventilador", "stock" : 100 }
+{ "_id" : ObjectId("635735fa16e54736e760946a"), "title" : "Computadora", "price" : 636, "thumbnail" : "Imagen de Computadora", "stock" : 100 }
+{ "_id" : ObjectId("635735fa16e54736e760946b"), "title" : "Monitor", "price" : 783, "thumbnail" : "Imagen de Monitor", "stock" : 0 }
+{ "_id" : ObjectId("635735fa16e54736e760946c"), "title" : "Lampara", "price" : 860, "thumbnail" : "Imagen de Lampara", "stock" : 0 }
+{ "_id" : ObjectId("635735fa16e54736e760946d"), "title" : "PS5", "price" : 999, "thumbnail" : "Imagen de PS5", "stock" : 0 }
+{ "_id" : ObjectId("635735fa16e54736e760946e"), "title" : "Parlante", "price" : 1057, "thumbnail" : "Imagen de Parlante", "stock" : 0 }
+{ "_id" : ObjectId("635735fa16e54736e760946f"), "title" : "Teclado", "price" : 1230, "thumbnail" : "Imagen de Teclado", "stock" : 0 }
+
+> db.productos.deleteMany({price:{$lt: 500}})
+
+{ "acknowledged" : true, "deletedCount" : 4 }
+
+> db.productos.find()
+{ "_id" : ObjectId("635735fa16e54736e7609469"), "title" : "Ventilador", "price" : 568, "thumbnail" : "Imagen de Ventilador", "stock" : 100 }
+{ "_id" : ObjectId("635735fa16e54736e760946a"), "title" : "Computadora", "price" : 636, "thumbnail" : "Imagen de Computadora", "stock" : 100 }
+{ "_id" : ObjectId("635735fa16e54736e760946b"), "title" : "Monitor", "price" : 783, "thumbnail" : "Imagen de Monitor", "stock" : 0 }
+{ "_id" : ObjectId("635735fa16e54736e760946c"), "title" : "Lampara", "price" : 860, "thumbnail" : "Imagen de Lampara", "stock" : 0 }
+{ "_id" : ObjectId("635735fa16e54736e760946d"), "title" : "PS5", "price" : 999, "thumbnail" : "Imagen de PS5", "stock" : 0 }
+{ "_id" : ObjectId("635735fa16e54736e760946e"), "title" : "Parlante", "price" : 1057, "thumbnail" : "Imagen de Parlante", "stock" : 0 }
+{ "_id" : ObjectId("635735fa16e54736e760946f"), "title" : "Teclado", "price" : 1230, "thumbnail" : "Imagen de Teclado", "stock" : 0 }
+
+> db.createUser({user: 'pepe', pwd: 'asd456', roles: [{role: 'read', db: 'ecommerce'}]})
+Successfully added user: {
+        "user" : "pepe",
+        "roles" : [
+                {
+                        "role" : "read",
+                        "db" : "ecommerce"
+                }
+        ]
+}
+
+> db.system.users.find()
+{ "_id" : "admin.pepe", "userId" : UUID("5e64a215-3c9e-4422-9340-4078e8a02028"), "user" : "pepe", "db" : "admin", "credentials" : { "SCRAM-SHA-1" : { "iterationCount" : 10000, "salt" : "iVj6qotA5MHT5k2WqIRV6Q==", "storedKey" : "hjzv02Xknguv40Yae6R1nu6D7dc=", "serverKey" : "IoVZmpvnekBi+6BAjCLk0M+Se8g=" }, "SCRAM-SHA-256" : { "iterationCount" : 15000, "salt" : "C1e9sqMkwu15QtsDS1kXbgXNPFQfsy3BYh7lLw==", "storedKey" : "wiI7IfbfmWce4EwaNRgDW7A2xhsAldLuQc2w2UB5Vb0=", "serverKey" : "HTiAV1+HXjjvOAOAtwTHRwuQ/FezeemgXF4akwlBEog=" } }, "roles" : [ { "role" : "read", "db" : "ecommerce" } ] }
+
+C:\Users\felip> mongo -u pepe -p asd456
+MongoDB shell version v5.0.13
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("d3ed5fc5-9cb8-455e-88cc-9135f2284ca6") }
+MongoDB server version: 5.0.13
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2022-10-23T16:44:24.617-03:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+
+> show dbs
+
+admin      0.000GB
+config     0.000GB
+ecommerce  0.000GB
+local      0.000GB
+
+> use ecommerce
+
+switched to db ecommerce
+
+> show collections
+
+mensajes
+productos
+
+> db.productos.find()
+{ "_id" : ObjectId("635735fa16e54736e7609469"), "title" : "Ventilador", "price" : 568, "thumbnail" : "Imagen de Ventilador", "stock" : 100 }
+{ "_id" : ObjectId("635735fa16e54736e760946a"), "title" : "Computadora", "price" : 636, "thumbnail" : "Imagen de Computadora", "stock" : 100 }
+{ "_id" : ObjectId("635735fa16e54736e760946b"), "title" : "Monitor", "price" : 783, "thumbnail" : "Imagen de Monitor", "stock" : 0 }
+{ "_id" : ObjectId("635735fa16e54736e760946c"), "title" : "Lampara", "price" : 860, "thumbnail" : "Imagen de Lampara", "stock" : 0 }
+{ "_id" : ObjectId("635735fa16e54736e760946d"), "title" : "PS5", "price" : 999, "thumbnail" : "Imagen de PS5", "stock" : 0 }
+{ "_id" : ObjectId("635735fa16e54736e760946e"), "title" : "Parlante", "price" : 1057, "thumbnail" : "Imagen de Parlante", "stock" : 0 }
+{ "_id" : ObjectId("635735fa16e54736e760946f"), "title" : "Teclado", "price" : 1230, "thumbnail" : "Imagen de Teclado", "stock" : 0 }
+
+> db.productos.insertOne({title: "Smartphone", price: 1500, thumbnail: "Imagen de celular"})
+
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("635741779bb11ecfba8e6630")
+}
+> db.productos.estimatedDocumentCount()
+8
