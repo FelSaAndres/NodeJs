@@ -18,4 +18,9 @@ routerProductos.post("/", (req, res) => {
     }
 })
 
+routerProductos.post("", (req, res) =>{
+    
+})
+
+
 module.exports = {routerProductos}
